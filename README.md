@@ -5,7 +5,7 @@ You will continue to the Lab 6 (Spring Security) to convert the UI to React proj
 
 ###  Requirements
 --- 
-* Create necessary containers.
+* Create necessary components.
 * Create states in the componenest when needed.
 
 
