@@ -32,14 +32,6 @@
   margin: auto;
 }
 
-.form-signin .checkbox {
-  font-weight: 400;
-}
-
-.form-signin .form-floating:focus-within {
-  z-index: 2;
-}
-
 .form-signin input[type="email"] {
   margin-bottom: 3px;
   border-bottom-right-radius: 0;
