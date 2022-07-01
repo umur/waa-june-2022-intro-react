@@ -33,14 +33,14 @@ function SignUp() {
                     <label htmlFor="floatingPassword">Password</label>
                 </div>
                 <div className="form-floating">
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Select Role</option>
-                        <option value="Admin">Admin</option>
-                        <option value="Client">Client</option>
+                    <select className="form-select" aria-label="Default select example">
+                        <option>--Select--</option>
+                        <option>Admin</option>
+                        <option>Client</option>
                     </select>
                 </div>
                 <div className="mt-5">
-                    <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                    <button className="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
                 </div>
                 <p className="mt-5 mb-3 text-muted">&copy; Ashish Pokhrel</p>
             </form>
