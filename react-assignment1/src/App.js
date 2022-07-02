@@ -4,6 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import './style/main.css'
 import { useState } from 'react';
 import SignUp from './component/signUp';
+import ListProducts from './component/Product/ListProducts';
 
 function App() {
   let [showSignUp, setSignUp] = useState(false);
@@ -23,21 +24,31 @@ function App() {
   }
 
   return (
-    <div className="body text-center App">
-      <main className="form-signin">
-        <a href='#' name="productList" onClick={setValues}>List Products</a>
-        
-        {!showSignUp && <>
-          <LoginPage></LoginPage>
-          <button className="btn btn-sm btn-success" type="submit" onClick={setValues}>Sign Up</button>
-        </>
-        }
+    <div className='App'>
+      <div className="body">
+        <main className="form-signin">
+          {!showProduct && <>
+            <a href='#' name="productList" onClick={setValues}>List Products</a>
+            {!showSignUp && <>
+              <LoginPage></LoginPage>
+              <button className="btn btn-sm btn-success" type="submit" onClick={setValues}>Sign Up</button>
+            </>
+            }
 
-        {showSignUp && <>
-          <SignUp></SignUp>
-          <button className="btn btn-sm btn-success" type="submit" onClick={setValues}>Sign In</button>
-        </>}
-      </main>
+            {showSignUp && <>
+              <SignUp></SignUp>
+              <button className="btn btn-sm btn-success" type="submit" onClick={setValues}>Sign In</button>
+            </>}
+          </>
+          }
+
+
+        </main>
+      </div>
+      {showProduct && <>
+        <h1 className="h3 mb-3 fw-normal">Product List</h1>
+        <ListProducts></ListProducts>
+      </>}
     </div>
   );
 }

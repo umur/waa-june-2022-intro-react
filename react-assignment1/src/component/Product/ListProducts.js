@@ -3,8 +3,7 @@ import React from "react";
 
 function ListProducts() {
     return (
-
-        <table className="table table-bordered table-dark">
+        <table className="table table-bordered">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -28,7 +27,8 @@ function ListProducts() {
                 </tr>
                 <tr>
                     <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
                     <td>@protein</td>
                 </tr>
             </tbody>
