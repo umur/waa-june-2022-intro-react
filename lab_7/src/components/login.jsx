@@ -1,38 +1,48 @@
 import React, { useState } from 'react'
 
- function Login({ Login, error }) {
-  
-  const [details, setDetails] = useState({ name: "", password: "" })
+function Login() {
 
-  // const submitHandler = s => {
-  //   s.preventDefault();
-  // }
+  const initialState = { userName: "Test", password: "really" }
+  const [user, setUser] = useState(initialState)
+
+  //capturing the date from the input
+  const changeFields = (event) => {
+    const copyState = { ...user }
+    copyState[event.target.name] = event.target.value;
+    setUser(copyState);
+  }
+  //save button function
+  const saveValue = () => {
+    console.log(user)
+  }
+  
   return (
     <form>
-      <div className='ctn'>
+      <div className='container'>
         <h1>LoginPage</h1>
-        {/*ERROR!*/}
         <div className='login-group'>
           <label>UserName:</label>
-          <input type="text" name='login' id='login'></input>
-        </div>
+          <input
+            defaultValue={user.userName}
+            onChange={changeFields}
+            type="text" name='userName' id='login'></input>
+        </div><br />
         <div className='login-group'>
           <label>Password:</label>
-          <input type="password" name='pass' id='pass'></input>
+          <input type="password" 
+          defaultValue={user.password}
+           onChange={changeFields}
+           name='password' id='pass'></input>
         </div>
-        <input type='button' value='Login'></input>
-        {/* <div className='login-group'>
-        <label>UserName:</label>
-        <input type="text" name='login' id='login'></input>
-</div> */}
+        <br />
+        <input type='button'
+          onClick={saveValue}
+          value='Login'>
+        </input>
+        <a href=""><br /> SIGNUP </a>if you don't have account
       </div>
 
     </form>
-    // <>
-    // <div>Login</div>
-    // <input type="text" name='login'></input>
-    // <input type="password" name='pass'></input>
-    // </>
   )
 }
 

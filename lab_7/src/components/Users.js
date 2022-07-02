@@ -1,13 +1,11 @@
 import React from 'react';
+import User from './User';
 
-const User = () => {
-
+function Users (){
+    
     return (
-
         <div>
-        
+
         </div>
     )
 }
-
-export default User;

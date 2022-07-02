@@ -9,3 +9,9 @@
 input {
   background-color: #45a049;
 } */
+
+.container{
+    border-style: solid;
+    text-align: center;
+    padding-inline-start: 20px;
+}

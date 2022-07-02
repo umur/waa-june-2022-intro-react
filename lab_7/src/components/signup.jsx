@@ -14,10 +14,14 @@ function Signup(props) {
                 <form>
                     <label>Username :
                         <input type="text" 
+                        value={userName }
                         /><br></br>
                     </label>
                     <label>Password :
-                        <input type="text" />
+                        <input type="text" 
+                            value={password}
+                        />
+
                     </label><br></br>
                     <button onClick={props.onClick}>Signup
                     {props.value}
