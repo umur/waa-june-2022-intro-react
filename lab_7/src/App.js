@@ -1,37 +1,52 @@
-import logo from './logo.svg';
+
 import './App.css';
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import LoginForm from './components/login'
 import Signup from './components/signup';
+import User from './components/User';
 
 function App() {
-  const admin ={
-    email:'lulu@gmail.com',
-    pass:'adm123'
+  const admin = {
+    email: 'lulu@gmail.com',
+    pass: 'adm123'
   }
-  const [user,setUser] = useState({userName:"", password:""})
-  const [error,setError]= useState("");
+  const ourUsers = [
+    { firstName: 'Robeil' },
+    { firstName: 'Luwam' },
+    { firstName: 'Merhawi' },
+    { firstName: 'Keleab' }
+  ];
+  const [user, setUser] = useState({ userName: "", password: "" })
+  const [error, setError] = useState("");
 
-  const Login = details=>{
+  const Login = details => {
     console.log(details);
   }
-  const Logout = ()=>{
+  const Logout = () => {
     console.log("logout");
   }
 
-  return(
+  return (
     <div className="App">
-    
-     {(user.email !="") ? (
-      <div className='welcome'>
-        <h2>Wel Come,<span>{user.name}</span></h2>
-        <button>Logout</button>
+      <div className="signup">
+        <Signup />
+      </div>
+      {(user.email = "") ? (
+        <div className='welcome'>
+          <h2>Wel Come,<span>{user.name}</span></h2>
+          <button>Logout</button>
         </div>
-     ):(
-      <LoginForm Login={Login} error={error}/>
-     )}
-       </div>
+      ) : (
+        <LoginForm Login={Login} error={error} />
+      )}
+    <div>
+
+    </div>
+    </div>
+
+
   );
+
 }
 
 export default App;

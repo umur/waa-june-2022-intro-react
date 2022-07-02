@@ -1,5 +1,31 @@
-import React from 'react'
+import {React, useState} from 'react';
 
-const Signup=()=> <div>Signup</div>
-  
-export default Signup
+function Signup(props) {
+
+    const [userName, setUserName] = useState("");
+    const [password, setPassword] = useState("");
+
+    //fetch
+
+    return (
+        <div className="loginForm">
+            <div className="welcome">
+                <h2>Welcome to MIU WAA course </h2>
+                <form>
+                    <label>Username :
+                        <input type="text" 
+                        /><br></br>
+                    </label>
+                    <label>Password :
+                        <input type="text" />
+                    </label><br></br>
+                    <button onClick={props.onClick}>Signup
+                    {props.value}
+                    </button>
+                </form>
+            </div>
+        </div>
+    )
+}
+
+export default Signup;
