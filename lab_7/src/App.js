@@ -3,6 +3,8 @@ import './App.css';
 import React,{useState} from 'react';
 import LoginForm from './components/login'
 import Signup from './components/signup';
+import HomePage from './components/homePage'
+import Product from './components/product';
 
 function App() {
   const admin ={
@@ -21,8 +23,10 @@ function App() {
 
   return(
     <div className="App">
-    
-     {(user.email !="") ? (
+    <div className='product'>
+       <Product/>    
+    </div>
+     {(user.email ="") ? (
       <div className='welcome'>
         <h2>Wel Come,<span>{user.name}</span></h2>
         <button>Logout</button>
