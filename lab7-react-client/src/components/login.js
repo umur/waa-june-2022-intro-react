@@ -1,6 +1,5 @@
 import React from "react";
 import '../css/login.css';
-
 function Login (props) { 
     return(
         <div className="form">
