@@ -1,30 +1,54 @@
 import {React, useState} from 'react';
 
-function Signup(props) {
+function Signup() {
 
-    const [userName, setUserName] = useState("");
-    const [password, setPassword] = useState("");
+    //const [userName, setUserName] = useState("");
+    const initialState= {fname:'test',lname:'test',email:'',password:''}
+    const [createUser, setcreateUser] = useState(initialState);
 
+    const onchangeFields =(event)=>{
+    const copyState = {...createUser}
+    copyState[event.target.name]= event.targetvalue;
+    setcreateUser(copyState);
+    }
     //fetch
+    const saveSignUpValues=()=>{
+        console.log(createUser);
+    }
 
     return (
-        <div className="loginForm">
+        <div className="container">
             <div className="welcome">
                 <h2>Welcome to MIU WAA course </h2>
                 <form>
-                    <label>Username :
+                    <label>FirstName :
                         <input type="text" 
-                        value={userName }
-                        /><br></br>
+                        defaultValue={createUser.fname}
+                        onChange={onchangeFields}
+                        name='fname'/><br></br>
                     </label>
-                    <label>Password :
+                    <label> LastName:
                         <input type="text" 
-                            value={password}
+                        name='lname'
+                            defaultValue={createUser.lname}
+                            onChange={onchangeFields}
                         />
-
                     </label><br></br>
-                    <button onClick={props.onClick}>Signup
-                    {props.value}
+                    <label> email:
+                        <input type="email" 
+                        name='email'
+                            defaultValue={createUser.email}
+                            onChange={onchangeFields}
+                        />
+                    </label><br></br>
+                    <label> Password:
+                        <input type="password" 
+                        name='password'
+                            defaultValue={createUser.password}
+                            onChange={onchangeFields}
+                        />
+                    </label><br></br>
+                    <button onClick={saveSignUpValues}>Signup
                     </button>
                 </form>
             </div>
