@@ -9,9 +9,37 @@
 input {
   background-color: #45a049;
 } */
-
+body{
+background-color: ivory;
+padding: 5px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+  
 .container{
     border-style: solid;
     text-align: center;
     padding-inline-start: 20px;
+}
+.table-group{
+ text-align: center;
+}
+.prodcutList{
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.prodcutList tr:nth-child(even){
+  background-color: #f2f2f2;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.prodcutList th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #917590;
+  color: white;
 }
