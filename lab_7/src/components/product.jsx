@@ -14,6 +14,7 @@ const Product = () => {
   };
 
   return (
+    
     <div className="table-group">
       <h1 className="product">List of Product</h1>
       <table className="prodcutList">

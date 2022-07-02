@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Product from './product'
 
 function Login() {
 
@@ -12,8 +13,11 @@ function Login() {
     setUser(copyState);
   }
   //save button function
-  const saveValue = () => {
+  const login = () => {
     console.log(user)
+    // if(user.userName === "Test" && user.password === "really"){
+      
+    // }
   }
   
   return (
@@ -35,11 +39,12 @@ function Login() {
            name='password' id='pass'></input>
         </div>
         <br />
-        <input type='button'
-          onClick={saveValue}
+        <a href="http://localhost:3000/signup"/> <input type='button'
+          onClick={login}
           value='Login'>
         </input>
-        <a href=""><br /> SIGNUP </a>if you don't have account
+        {/* <a href="http://localhost:3000/product"></a><button>Login1</button></a> */}
+        <a href="http://localhost:3000/signup"><br /> SIGNUP </a>if you don't have account
       </div>
 
     </form>

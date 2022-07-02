@@ -50,6 +50,7 @@ function Signup() {
                     </label><br></br>
                     <button onClick={saveSignUpValues}>Signup
                     </button>
+                    <a href="http://localhost:3000"><br /> SIGNIN </a>If you have an Account 
                 </form>
             </div>
         </div>
