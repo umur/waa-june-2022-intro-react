@@ -7,7 +7,7 @@ const ProductList = ({ products }) => {
         <div className="product-preview" key={product.id} >
           <Link to={`/products/${product.id}`}>
             <h2>{ product.title }</h2>
-            <p>Written by { product.author }</p>
+            <p>Category  { product.category }</p>
           </Link>
         </div>
       ))}
