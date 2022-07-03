@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-//import SignIn from './components/Login';
+
 import SignIn from './components/Login';
 import SignUp from './components/SignUp';
-//import TestFunction from './components/test';
+import BasicTable from './components/ProductList';
 
 
 function App() {
@@ -12,13 +12,8 @@ function App() {
       <div>
         <SignIn />
         <SignUp />
+        <BasicTable />
       </div>
-
-
-
-
-
-
     </div >
   );
 }
