@@ -1,5 +1,5 @@
 
-# Lab 7 - Introduction to React
+# [Lab 7 - Introduction to React](https://github.com/NirmalSilwal/waa-june-2022-intro-react/tree/main/lab7-react-intro)
 
 You will continue to the Lab 6 (Spring Security) to convert the UI to React project. Since HTTP requests are not covered in React yet, you  are not supposed to communicate with your backend application.
 
@@ -28,4 +28,8 @@ You will continue to the Lab 6 (Spring Security) to convert the UI to React proj
 -   Remember to respect the code honor submission policy. All written code must be original. Presenting something as one’s own work when it came from another source is plagiarism and is forbidden.
     
 -   Plagiarism is a very serious thing in all American academic institutions and is guarded against vigilantly by every professor.
+
+### Project setup command
+
+```create-react-app lab7-react-intro```
 
