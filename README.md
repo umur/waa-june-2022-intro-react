@@ -1,4 +1,7 @@
 
+
+![](https://github.com/robeil/waa-june-2022-intro-react/blob/main/lab_7/src/screenshoots/29CF3649-0BD8-4ABF-89EE-A3F317006F8A.jpeg)
+![](https://github.com/robeil/waa-june-2022-intro-react/blob/main/lab_7/src/screenshoots/39FB4499-D71F-4FAA-9EEF-EDC40E8ED747.jpeg)
 # Lab 7 - Introduction to React
 
 You will continue to the Lab 6 (Spring Security) to convert the UI to React project. Since HTTP requests are not covered in React yet, you  are not supposed to communicate with your backend application.
