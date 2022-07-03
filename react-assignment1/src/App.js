@@ -2,9 +2,11 @@ import './App.css';
 import LoginPage from './component/login';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import './style/main.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SignUp from './component/signUp';
 import ListProducts from './component/Product/ListProducts';
+import axios from 'axios'
+
 
 function App() {
   let [showSignUp, setSignUp] = useState(false);
@@ -22,6 +24,15 @@ function App() {
 
     }
   }
+
+  const fetchPersons = async () => {
+    let response = axios.get('https://www.google.com/');
+    console.log(response);
+  }
+
+  useEffect(() => {
+      fetchPersons();
+  },[])
 
   return (
     <div className='App'>
