@@ -60,8 +60,8 @@ export default function AddProducts() {
                             margin="normal"
                             required
                             fullWidth
-                            name="prict"
-                            label="Prict"
+                            name="price"
+                            label="Price"
                             type="text"
                             id="price"
                             autoComplete="price"
@@ -72,7 +72,7 @@ export default function AddProducts() {
                             variant="contained"
                             sx={{ mt: 3, mb: 2 }}
                         >
-                            Sign In
+                            Add Product
                         </Button>
                     </Box>
                 </Box>
