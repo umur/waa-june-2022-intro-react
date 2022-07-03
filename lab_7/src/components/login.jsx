@@ -44,12 +44,12 @@ function Login() {
             </input>
           </div>
           <br />
-          <a href="http://localhost:3000/signup" /> <input type='button' className='btn btn-primary'
+          <a href="http://localhost:3001/signup" /> <input type='button' className='btn btn-primary'
             onClick={login}
             value='Login'>
           </input>
           {/* <a href="http://localhost:3000/product"></a><button>Login1</button></a> */}
-          <a href="http://localhost:3000/signup"><br /> SIGNUP </a>if you don't have account
+          <a href="http://localhost:3001/signup"><br /> SIGNUP </a>if you don't have account
         </form>
       </div>
     </div>

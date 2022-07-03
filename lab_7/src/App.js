@@ -6,6 +6,7 @@ import Product from './components/product';
 import Login from './components/login';
 import axios from 'axios';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import NoPage from './components/NoPage';
 
 
 function App() {
@@ -33,9 +34,11 @@ function App() {
     <div className="container-fluid">
     <BrowserRouter>
       <Routes>
-        <Route path="/"element={<Login/>}></Route>
-        <Route path="/Signup" element={<Signup/>}></Route>
-        <Route path="/Product" element={<Product/>}></Route>
+        <Route path="/"element={<Login/>} />
+        <Route path="/signup" element={<Signup/>} />
+        <Route path="/product" element={<Product/>} />
+        <Route path="*" element={<NoPage />} />
+        
       </Routes>
     </BrowserRouter>
      </div>
