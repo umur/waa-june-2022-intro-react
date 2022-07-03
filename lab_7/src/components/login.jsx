@@ -16,38 +16,43 @@ function Login() {
   const login = () => {
     console.log(user)
     // if(user.userName === "Test" && user.password === "really"){
-      
+
     // }
   }
-  
-  return (
-    <form>
-      <div className='container'>
-        <h1>LoginPage</h1>
-        <div className='login-group'>
-          <label>UserName:</label>
-          <input
-            defaultValue={user.userName}
-            onChange={changeFields}
-            type="text" name='userName' id='login'></input>
-        </div><br />
-        <div className='login-group'>
-          <label>Password:</label>
-          <input type="password" 
-          defaultValue={user.password}
-           onChange={changeFields}
-           name='password' id='pass'></input>
-        </div>
-        <br />
-        <a href="http://localhost:3000/signup"/> <input type='button'
-          onClick={login}
-          value='Login'>
-        </input>
-        {/* <a href="http://localhost:3000/product"></a><button>Login1</button></a> */}
-        <a href="http://localhost:3000/signup"><br /> SIGNUP </a>if you don't have account
-      </div>
 
-    </form>
+  return (
+
+    <div className='container-fluid content'>
+      <h1>LoginPage</h1>
+      <div className='border alert alert-success container'>
+        <form className="minForm">
+          <div className="column">
+            <label>UserName:</label>
+            <input className="form-control"
+              defaultValue={user.userName}
+              onChange={changeFields}
+              type="text" name='userName' id='login'>
+            </input>
+          </div>
+          <br />
+          <div className='column'>
+            <label>Password:</label>
+            <input type="password" className="form-control"
+              defaultValue={user.password}
+              onChange={changeFields}
+              name='password' id='pass'>
+            </input>
+          </div>
+          <br />
+          <a href="http://localhost:3000/signup" /> <input type='button' className='btn btn-primary'
+            onClick={login}
+            value='Login'>
+          </input>
+          {/* <a href="http://localhost:3000/product"></a><button>Login1</button></a> */}
+          <a href="http://localhost:3000/signup"><br /> SIGNUP </a>if you don't have account
+        </form>
+      </div>
+    </div>
   )
 }
 
