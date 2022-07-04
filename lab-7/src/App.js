@@ -9,21 +9,7 @@ import Signin from "./Signin";
 import Signup from "./Signup";
 
 function App() {
-  // const config = {
-  //   headers: {
-  //     "Access-Control-Allow-Origin": "*",
-  //     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-  //   }
-  // };
-  
-  // const fetchPerson = async() =>{
-  //   let data = await axios.get('https://catalog.data.gov/api/3', config);
-  //   console.log(data);
-  // }
-
-  // useEffect(()=>{
-  //   fetchPerson();
-  // })
+ 
 
   return (
     <BrowserRouter>
