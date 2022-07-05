@@ -1,15 +1,16 @@
 import { React, useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom'
+import Login from './login'
 
 function Signup() {
 
-    //const [userName, setUserName] = useState("");
     const initialState = { fname: 'test', lname: 'test', email: '', password: '' }
-    const [createUser, setcreateUser] = useState(initialState);
+    const [createUser, setCreateUser] = useState(initialState);
 
     const onchangeFields = (event) => {
         const copyState = { ...createUser }
-        copyState[event.target.name] = event.targetvalue;
-        setcreateUser(copyState);
+        copyState[event.target.name] = event.target.value;
+        setCreateUser(copyState);
     }
     //fetch
     const saveSignUpValues = () => {
@@ -50,10 +51,15 @@ function Signup() {
                                 defaultValue={createUser.password}
                                 onChange={onchangeFields}
                             />
-                        </label><br/><br/>
+                        </label><br /><br />
                         <button onClick={saveSignUpValues} btn className='btn-primary'>Signup
-                        </button>
-                        <a href="http://localhost:3001/"><br /> SIGNIN </a>If you have an Account
+                        </button><br />
+                        <Link to='/login'>SignIn! If you have an Account</Link>
+                        <Routes>
+                            <Route path='/login'
+                                element={<Login></Login>}>
+                            </Route>
+                        </Routes>
                     </div>
                 </form>
             </div>

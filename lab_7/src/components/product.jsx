@@ -1,31 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios'
+
+export const UserContext = React.createContext();
 
 const Product = () => {
-  const initialState = { productId: "", productName: "", productQuantity: "" };
-  const [product, setProduct] = useState(initialState);
 
-  const onchangeFields = () => {
-    const copyState = { ...product };
-    copyState[product.target.name] = product.target.value;
-    setProduct(copyState);
-  };
-  const saveValue = () => {
-    console.log(product);
+  let [userState, setUserState] = useState({});
+
+  const fetchUser = async () => {
+    let response = await axios.get('http://localhost:8081/users');
+    console.log(response.data);
+    setUserState({ users: response.data })
+  }
+
+  useEffect(() => {
+    fetchUser();
+  }, [])
+
+
+
+  const onChangeFields = (event) => {
+    const copyState = { ...userState };
+    copyState[event.target.name] = event.target.value;
+    setUserState(copyState);
   };
 
+  console.log(userState);
   return (
-    
+
     <div className="table-group">
       <h1 className="product">List of Product</h1>
       <table className="prodcutList">
         <thead>
-          <th>Product Id :{product.productId} </th>
-          <th>Product Name: {product.productName} </th>
-          <th>Product Quantity:{product.productQuantity}</th>
+          <th>User Id :{userState.id} </th>
+          <th>User First Name: {useState.firstName} </th>
+          <th>User last Name:{userState.lastName}</th>
         </thead>
       </table>
+      <button onClick={onChangeFields}>Display Users</button>
     </div>
   );
 };
 
-export default Product;
+export { Product };

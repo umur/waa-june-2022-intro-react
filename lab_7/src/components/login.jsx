@@ -1,55 +1,79 @@
-import React, { useState } from 'react'
-import Product from './product'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import userDetails from './UserDetails';
+import { useNavigate } from 'react-router';
+
+
 
 function Login() {
 
-  const initialState = { userName: "Test", password: "really" }
-  const [user, setUser] = useState(initialState)
+  let [userState, setUserState] = useState({});
 
-  //capturing the date from the input
-  const changeFields = (event) => {
-    const copyState = { ...user }
-    copyState[event.target.name] = event.target.value;
-    setUser(copyState);
+  const fetchUser = async () => {
+    let response = await axios.get('http://localhost:8081/users');
+    console.log(response.data);
+    setUserState(response.data)
   }
+
+  useEffect(() => {
+    fetchUser();
+  }, [])
+
+  const redirect = useNavigate();
+
   //save button function
   const login = () => {
-    console.log(user)
-    // if(user.userName === "Test" && user.password === "really"){
 
-    // }
+    console.log("username " +userState.userName);
+    console.log("password" + userState.password)
+    
+    if (userState.userName === "test" && userState.password === "test") {
+      redirect('./UserDetails.js')
+    }
+  }
+
+  const changeField = (event) => {
+    const copyState = { ...useState };
+    copyState[event.target.name] = event.target.value;
+    setUserState(copyState);
   }
 
   return (
 
     <div className='container-fluid content'>
-      <h1>LoginPage</h1>
+      <h1>Login Page</h1>
       <div className='border alert alert-success container'>
         <form className="minForm">
           <div className="column">
             <label>UserName:</label>
             <input className="form-control"
-              defaultValue={user.userName}
-              onChange={changeFields}
+              defaultValue={userState.userName}
+              onChange={changeField}
               type="text" name='userName' id='login'>
             </input>
           </div>
           <br />
           <div className='column'>
             <label>Password:</label>
-            <input type="password" className="form-control"
-              defaultValue={user.password}
-              onChange={changeFields}
+            <input
+              type="password"
+              className="form-control"
+              defaultValue={userState.password}
+              onChange={changeField}
               name='password' id='pass'>
             </input>
           </div>
           <br />
-          <a href="http://localhost:3001/signup" /> <input type='button' className='btn btn-primary'
+          <button type='button' className='btn btn-primary'
             onClick={login}
-            value='Login'>
-          </input>
-          {/* <a href="http://localhost:3000/product"></a><button>Login1</button></a> */}
-          <a href="http://localhost:3001/signup"><br /> SIGNUP </a>if you don't have account
+            value='Login'>Login</button><br />
+          <a href="http://localhost:3000/signup">SignUp If you have an Account</a>
+          {/* <Link to="/signup">SIGNUP If you don't have account</Link> */}
+          {/* <Routes>
+            <Route path='/login'
+              element={<Login></Login>}>
+            </Route>
+          </Routes> */}
         </form>
       </div>
     </div>
